@@ -27,7 +27,7 @@ TARGET_2ND_CPU_VARIANT := generic
 TARGET_CPU_ABI_LIST := x86 armeabi-v7a armeabi
 TARGET_TRANSLATE_2ND_ARCH := true
 
-BUILD_BROKEN_DUP_RULES := true
+#BUILD_BROKEN_DUP_RULES := true
 
 
 include build/make/target/board/BoardConfigGsiCommon.mk
