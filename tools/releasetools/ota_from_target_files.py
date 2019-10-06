@@ -946,6 +946,16 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.Print("Target: {}".format(target_info.fingerprint))
 
   script.AppendExtra("ifelse(is_mounted(\"/system\"), unmount(\"/system\"));")
+
+  build_tag = target_info.GetBuildProp("ro.caf.revision")
+
+  script.Print("-------------------------------------------------");
+  script.Print("                  Just CAF");
+  script.Print("-------------------------------------------------");
+  script.Print(" Caf version: %s"%(build_tag));
+  script.Print(" Github: https://github.com/aosp-caf-cheeseburger");
+  script.Print("----------------------------------------------");
+
   device_specific.FullOTA_InstallBegin()
 
   system_progress = 0.75
