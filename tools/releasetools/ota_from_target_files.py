@@ -947,14 +947,15 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 
   script.AppendExtra("ifelse(is_mounted(\"/system\"), unmount(\"/system\"));")
 
-  build_tag = target_info.GetBuildProp("ro.caf.revision")
+  build_tag = target_info.GetVendorBuildProp("ro.caf.revision")
 
-  script.Print("-------------------------------------------------");
+  script.Print("--------------------------------------------------");
   script.Print("                  Just CAF");
-  script.Print("-------------------------------------------------");
+  script.Print("--------------------------------------------------");
   script.Print(" Caf version: %s"%(build_tag));
+  script.Print(" Android version: 10.00.00");
   script.Print(" Github: https://github.com/aosp-caf-cheeseburger");
-  script.Print("----------------------------------------------");
+  script.Print("--------------------------------------------------");
 
   device_specific.FullOTA_InstallBegin()
 
